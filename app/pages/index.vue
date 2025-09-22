@@ -60,6 +60,7 @@
                     <v-text-field
                       v-model="invoiceData.location"
                       label="Location"
+                      placeholder="e.g., LAGOS, NIGERIA"
                       variant="outlined"
                       density="compact"
                     />
@@ -104,13 +105,15 @@
                     <v-text-field
                       v-model="invoiceData.subjects"
                       label="Subjects"
+                      placeholder="e.g., Maths, English and Science"
                       variant="outlined"
                       density="compact"
                       class="mb-2"
                     />
                     <v-text-field
                       v-model="invoiceData.numberOfContact"
-                      label="Number of Contact (e.g., THREE TIMES(4) WEEKLY)"
+                      label="Number of Contact"
+                      placeholder="e.g., THREE TIMES(3) WEEKLY"
                       variant="outlined"
                       density="compact"
                       class="mb-2"
@@ -246,7 +249,7 @@
                       <div class="company-info">
                         <div class="company-title">TECH MOM</div>
                         <div class="company-subtitle">ONLINE TUTORING</div>
-                        <div class="location">{{ invoiceData.location || 'LAGOS, NIGERIA' }}</div>
+                        <div class="location">LAGOS, NIGERIA</div>
                         <div class="phone">+2347037902005</div>
                         <div class="email">techmom001@gmail.com</div>
                       </div>
@@ -267,7 +270,7 @@
                       </div>
                     </div>
 
-                    <div class="mt-10 location-line">{{ invoiceData.location || 'UK' }}</div>
+                    <div class="mt-10 location-line">{{ invoiceData.location }}</div>
 
                     <!-- Table -->
                     <table class="mt-10 invoice-table">
@@ -356,8 +359,8 @@ const invoiceData = ref({
   date: new Date().toISOString().split('T')[0],
   location: 'LAGOS, NIGERIA',
   item: '',
-  subjects: 'Maths, English and Science',
-  numberOfContact: 'THREE TIMES(3) WEEKLY',
+  subjects: '',
+  numberOfContact: '',
   units: 0,
   total: 0,
   tax: 0,
