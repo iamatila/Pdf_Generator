@@ -239,7 +239,7 @@
                           <!-- <v-icon size="40" color="#ff6b35">mdi-lightbulb</v-icon> -->
                         <!-- </div> -->
                         <img 
-                         :src="tm_logo" 
+                         :src="tm_logo_3" 
                          alt="TM Logo"
                          class="logo-image"
                        />
@@ -347,7 +347,7 @@
 
 <script setup>
 import { ref, computed } from 'vue'
-import tm_logo from '~/assets/tm_logo.jpeg'  // Import your logo image
+import tm_logo_3 from '~/assets/tm_logo_3.png'  // Import your logo image
 import PdfGenerator from '~/components/PdfGenerator.client.vue'
 
 // Reactive data
@@ -459,6 +459,8 @@ const generatePDF = async () => {
   max-width: 140px;
   max-height: 155px;
   object-fit: contain;
+  /* background: none; */
+  /* background: linear-gradient(135deg, #fff9c4 0%, #f8bbd9 50%, #e8a5d8 100%); */
 }
 
 .logo-placeholder {
