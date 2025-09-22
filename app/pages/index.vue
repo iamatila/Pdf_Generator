@@ -357,7 +357,7 @@ const signaturePreview = ref(null)
 const invoiceData = ref({
   invoiceNumber: '001',
   date: new Date().toISOString().split('T')[0],
-  location: 'LAGOS, NIGERIA',
+  location: '',
   item: '',
   subjects: '',
   numberOfContact: '',
