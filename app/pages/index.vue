@@ -232,11 +232,16 @@
                     <!-- Header -->
                     <div class="invoice-header">
                       <div class="logo-section">
-                        <div class="logo-placeholder">
-                          <v-icon size="40" color="#ff6b35">mdi-lightbulb</v-icon>
-                        </div>
-                        <div class="company-name">TECH MOM</div>
-                        <div class="tagline">ONLINE TUTOR</div>
+                        <!-- <div class="logo-placeholder"> -->
+                          <!-- <v-icon size="40" color="#ff6b35">mdi-lightbulb</v-icon> -->
+                        <!-- </div> -->
+                        <img 
+                         :src="tm_logo" 
+                         alt="TM Logo"
+                         class="logo-image"
+                       />
+                        <!-- <div class="company-name">TECH MOM</div>
+                        <div class="tagline">ONLINE TUTOR</div> -->
                       </div>
                       <div class="company-info">
                         <div class="company-title">TECH MOM</div>
@@ -248,10 +253,10 @@
                     </div>
 
                     <!-- Invoice Title -->
-                    <div class="invoice-title">INVOICE</div>
+                    <div class="mt-10 invoice-title">INVOICE</div>
 
                     <!-- Invoice Info -->
-                    <div class="invoice-info">
+                    <div class="mt-10 invoice-info">
                       <div class="invoice-for">
                         <!-- <strong>Invoice for: {{ studentNames }}</strong> -->
                         <strong>Invoice for: {{ invoiceData.item }}</strong>
@@ -262,10 +267,10 @@
                       </div>
                     </div>
 
-                    <div class="location-line">{{ invoiceData.location || 'UK' }}</div>
+                    <div class="mt-10 location-line">{{ invoiceData.location || 'UK' }}</div>
 
                     <!-- Table -->
-                    <table class="invoice-table">
+                    <table class="mt-10 invoice-table">
                       <thead>
                         <tr>
                           <th>Item</th>
@@ -288,7 +293,7 @@
                     </table>
 
                     <!-- Totals -->
-                    <div class="totals-section">
+                    <div class="mt-10 totals-section">
                       <div class="total-line">
                         <span>Subtotal</span>
                         <span>{{ formatCurrency(invoiceData.total) }}</span>
@@ -304,14 +309,14 @@
                     </div>
 
                     <!-- Payment Method -->
-                    <div class="payment-section">
+                    <div class="mt-10 payment-section">
                       <div class="payment-title">PAYMENT METHOD</div>
                       <div class="payment-details">
                         <div>Account Name: {{ invoiceData.accountName || 'OJO OLUWAKEMI' }}</div>
                         <div>Account No. {{ invoiceData.accountNo || '6506787803' }}</div>
                         <div>Pay TO: {{ invoiceData.bankName || 'PROVIDUS BANK' }}</div>
                       </div>
-                      <div class="signature-section">
+                      <div class="mb-10 signature-section">
                         <div class="signature-container">
                           <img 
                             v-if="signaturePreview" 
@@ -325,7 +330,7 @@
                       </div>
                     </div>
 
-                    <div class="footer">THANKS FOR CHOOSING US.</div>
+                    <div class="mt-10 mb-7 footer">THANKS FOR CHOOSING US.</div>
                   </div>
                 </div>
               </v-card-text>
@@ -339,6 +344,8 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import tm_logo from '~/assets/tm_logo.jpeg'  // Import your logo image
+import PdfGenerator from '~/components/PdfGenerator.client.vue'
 
 // Reactive data
 const students = ref([''])
@@ -422,34 +429,13 @@ const generatePDF = async () => {
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
-  height: 100%;
 }
 
 .invoice-container {
   background: linear-gradient(135deg, #fff9c4 0%, #f8bbd9 50%, #e8a5d8 100%);
   padding: 20px;
   font-family: Arial, sans-serif;
-  min-height: 100vh; /* Full viewport height */
-  height: auto;
-  color: #000;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.invoice-content {
-  flex-grow: 1;
-}
-
-.footer {
-  margin-top: auto;
-  clear: both;
-  text-align: center;
-  font-weight: bold;
-  font-size: 14px;
-  padding-top: 20px;
-  border-top: 1px solid #000;
+  /* min-height: 800px; */
   color: #000;
 }
 
@@ -464,6 +450,12 @@ const generatePDF = async () => {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.logo-image {
+  max-width: 140px;
+  max-height: 155px;
+  object-fit: contain;
 }
 
 .logo-placeholder {
@@ -633,5 +625,16 @@ const generatePDF = async () => {
 .signature-preview {
   border: 1px dashed #ccc;
   border-radius: 4px;
+}
+
+.footer {
+  clear: both;
+  text-align: center;
+  font-weight: bold;
+  font-size: 14px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #000;
+  color: #000;
 }
 </style>
