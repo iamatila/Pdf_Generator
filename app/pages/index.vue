@@ -317,7 +317,7 @@
                       <div class="payment-details">
                         <div>Account Name: {{ invoiceData.accountName || 'OJO OLUWAKEMI' }}</div>
                         <div>Account No. {{ invoiceData.accountNo || '6506787803' }}</div>
-                        <div>Pay TO: {{ invoiceData.bankName || 'PROVIDUS BANK' }}</div>
+                        <div>Bank Name: {{ invoiceData.bankName || 'PROVIDUS BANK' }}</div>
                       </div>
                       <div class="mb-10 signature-section">
                         <div class="signature-container">
