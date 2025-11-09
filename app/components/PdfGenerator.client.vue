@@ -16,6 +16,7 @@
 const props = defineProps({
   invoiceData: Object,
   students: Array,
+  logoPreview: String,
   signaturePreview: String
 })
 
