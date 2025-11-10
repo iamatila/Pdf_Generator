@@ -43,4 +43,10 @@ export default defineNuxtConfig({
       },
     },
   },
+  
+  runtimeConfig: {
+    public: {
+      public_google_ads_client_id: process.env.PUBLIC_GOOGLE_ADS_CLIENT_ID,
+    },
+  },
 })

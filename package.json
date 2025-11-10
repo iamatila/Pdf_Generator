@@ -1,5 +1,5 @@
 {
-  "name": "mrs_kemi_ojo_pdf",
+  "name": "invoice-generator",
   "type": "module",
   "private": true,
   "scripts": {

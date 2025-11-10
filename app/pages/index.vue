@@ -4,14 +4,14 @@
       <v-container fluid>
         <v-row>
           <!-- Input Form -->
-          <v-col cols="12" md="6">
+          <v-col cols="12" sm="5">
             <v-card class="pa-4">
               <v-card-title class="text-h5 mb-4">
                 <v-icon left>mdi-invoice-text</v-icon>
                 Invoice Generator
               </v-card-title>
               
-              <v-card-text style="max-height: 900px; overflow-y: auto;">
+              <v-card-text style="max-height: 1150px; overflow-y: auto;">
                 <v-form @submit.prevent="generatePDF">
                   <!-- Student Names -->
                   <v-card variant="outlined" class="mb-4">
@@ -297,8 +297,27 @@
             </v-card>
           </v-col>
 
+          <!-- Ads -->
+          <v-col cols="12" sm="2">
+            <!-- <GoogleAd 
+              ad-slot="1234567890"  
+              ad-format="auto"
+              ad-client="ca-pub-XXXXXXXXXXXXXXXX"  
+              :ad-style="'display:block; text-align:center;'"
+              responsive="true"
+              /> -->
+            <GoogleAd 
+              ad-slot="1234567890"
+              ad-format="auto" 
+            />
+            <GoogleAd 
+              ad-slot="1234567890"
+              ad-format="auto"
+            />
+          </v-col>
+
           <!-- Preview -->
-          <v-col cols="12" md="6">
+          <v-col cols="12" md="5">
             <v-card>
               <v-card-title class="text-h5 mb-4">
                 <v-icon left>mdi-eye</v-icon>
@@ -440,6 +459,9 @@
 import { ref, computed } from 'vue'
 // import tm_logo_3 from '~/assets/tm_logo_3.png'  // Import your logo image
 import PdfGenerator from '~/components/PdfGenerator.client.vue'
+
+// const config = useRuntimeConfig();
+// const googleAds = config.public.public_google_ads_client_id;
 
 // Reactive data
 // const students = ref([''])
