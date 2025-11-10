@@ -49,4 +49,16 @@ export default defineNuxtConfig({
       public_google_ads_client_id: process.env.PUBLIC_GOOGLE_ADS_CLIENT_ID,
     },
   },
+  // Optional: Add the script globally in the head
+  app: {
+    head: {
+      script: [
+        {
+          src: `https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.PUBLIC_GOOGLE_ADS_CLIENT_ID}`,
+          async: true,
+          crossorigin: 'anonymous'
+        }
+      ]
+    }
+  }
 })
